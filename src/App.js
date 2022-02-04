@@ -1,8 +1,26 @@
+import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
+import Desktop from "./components/Desktop";
 import { fetchCity, fetchWeather, formatTime } from "./components/logic";
+import Mobile from "./components/Mobile";
 
 function App() {
+  const [vw, setVw] = useState(0);
+
+  useEffect(() => {
+    const handleScreenSize = () => {
+      setVw(window.innerWidth);
+    };
+    window.addEventListener("resize", handleScreenSize);
+
+    handleScreenSize();
+
+    return () => {
+      window.removeEventListener("resize", handleScreenSize);
+    };
+  }, [vw]);
+
   useEffect(() => {
     console.log("Use Effect");
     const fetch = async () => {
@@ -15,7 +33,7 @@ function App() {
 
     fetch();
   }, []);
-  return <div className="App"></div>;
+  return <div className="App">{vw > 1000 ? <Desktop /> : <Mobile />}</div>;
 }
 
 export default App;
