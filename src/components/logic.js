@@ -33,27 +33,34 @@ export const fetchWeather = async (lat, lon) => {
   }
 };
 
-export const formatTime = (dt) => {
+export const formatDate = (dt) => {
   const unixTimestamp = dt;
 
-  const milliseconds = unixTimestamp * 1000; // 1575909015000
+  const milliseconds = unixTimestamp * 1000;
 
   const dateObject = new Date(milliseconds);
 
   const weekDay = dateObject.toLocaleString("en-US", { weekday: "long" });
   const month = dateObject.toLocaleString("en-US", { month: "long" });
   const day = dateObject.toLocaleString("en-US", { day: "numeric" });
+
+  const time = weekDay + " " + day + " , " + month;
+
+  return time;
+};
+
+export const formatTime = (dt) => {
+  const unixTimestamp = dt;
+
+  const milliseconds = unixTimestamp * 1000;
+
+  const dateObject = new Date(milliseconds);
+
   const h = dateObject.toLocaleString("en-US", { hour: "numeric" });
   const [hour, AmPm] = h.split(" ");
   const minutes = dateObject.toLocaleString("en-US", { minute: "numeric" });
 
   const time =
-    weekDay +
-    " " +
-    day +
-    " , " +
-    month +
-    " " +
     (hour.length === 2 ? hour : "0" + hour) +
     ":" +
     (minutes.length === 2 ? minutes : "0" + minutes) +

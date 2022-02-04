@@ -10,7 +10,7 @@ const mainReducer = (state = initialState, action) => {
           firstName: action.payload,
         },
       };
-    case "ADD_CITY_NAME":
+    case "ADD_CITY":
       return {
         ...state,
         user: {

@@ -1,5 +1,4 @@
 import { BsPlusSquare } from "react-icons/bs";
-import { useDispatch } from "react-redux";
 
 const AddCity = ({ page, setPage }) => {
   return (

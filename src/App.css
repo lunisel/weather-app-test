@@ -34,6 +34,92 @@ html {
   border-bottom: transparent;
 }
 
+/* -------------------------- SINGLE CARDS ----------------------------- */
+
+.bg-01d,
+.bg-02d {
+  background: linear-gradient(150deg, #5374e7, #77b9f5);
+}
+
+.bg-03d,
+.bg-04d,
+.bg-09d,
+.bg-11d,
+.bg-13d,
+.bg-50d {
+  background: linear-gradient(150deg, #464c64, #99a9b9);
+}
+
+.bg-10d {
+  background: linear-gradient(150deg, #011354, #5b9fe3);
+}
+
+.bg-01n,
+.bg-02n,
+.bg-03n,
+.bg-04n,
+.bg-09n,
+.bg-10n,
+.bg-11n,
+.bg-13n,
+.bg-50n {
+  background: linear-gradient(150deg, #070c2a, #363d58);
+}
+
+.card-container {
+  width: 100%;
+  height: 10rem;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
+}
+
+.card-text-container {
+  padding-left: 1rem;
+  padding-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text-container h2 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 26px;
+  white-space: nowrap;
+}
+
+.card-text-container p.date {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.card-text-container p.time {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.card-icon-container,
+.card-temperature-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon-container img {
+  max-width: 75%;
+  max-height: 90%;
+}
+
+.card-temperature-container p {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 50px;
+}
+
 /* ------------------------------------ MOBILE ------------------------------------ */
 
 /************* NAV ************/
@@ -137,6 +223,16 @@ nav {
   font-size: 1.5rem;
 }
 
+.cities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-height: 72vh;
+  overflow: scroll;
+  padding-bottom: 1rem;
+}
+
 /******************* SEARCH ********************/
 
 .container#search {
@@ -201,4 +297,8 @@ nav {
 .search-icon svg {
   font-size: 1.2rem;
   color: #ffffff;
+}
+
+.results-container {
+  padding: 2rem 0;
 }

@@ -4,6 +4,6 @@ export const addUserName = (userName) => ({
 });
 
 export const addCity = (cityName) => ({
-  type: "ADD_CITY_NAME",
+  type: "ADD_CITY",
   payload: cityName,
 });
