@@ -132,6 +132,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f1f1f1;
 }
 
 .icons-container {
@@ -201,6 +202,22 @@ nav {
 }
 
 /********************* HOME ********************/
+.container.home {
+  height: 100vh;
+  padding-bottom: 30%;
+  overflow: scroll;
+}
+
+.home .title-container {
+  margin-block: 50px;
+}
+
+.home .title-container h2 {
+  color: #01175f;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
 
 .add-city-container {
   width: 100%;
@@ -208,7 +225,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
   gap: 1rem;
 }
 
@@ -227,10 +243,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 2rem;
-  max-height: 72vh;
-  overflow: scroll;
-  padding-bottom: 1rem;
+  margin-top: 50px;
+  padding-bottom: 2rem;
 }
 
 /******************* SEARCH ********************/

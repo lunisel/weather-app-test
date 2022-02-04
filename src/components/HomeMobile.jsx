@@ -7,6 +7,10 @@ const HomeMobile = ({ page, setPage }) => {
 
   return (
     <div className="container home">
+      <div className="title-container">
+        <h2>Good Morning!</h2>
+        <h2>Mario</h2>
+      </div>
       <AddCity page={page} setPage={setPage} />
       <div className="cities-container">
         {cities ? (

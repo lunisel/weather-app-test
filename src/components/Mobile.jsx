@@ -12,6 +12,7 @@ const Mobile = () => {
       {page === "home" && <HomeMobile page={page} setPage={setPage} />}
       {page === "search" && <SearchMobile />}
       {page === "localization" && <LocalizationMobile />}
+      {page === "details" && <LocalizationMobile />}
     </div>
   );
 };

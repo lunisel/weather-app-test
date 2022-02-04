@@ -36,6 +36,11 @@ const SearchMobile = () => {
           defaultValue={query}
           placeholder="ex: Miami"
           onChange={(e) => setQuery(e.target.value)}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              searchCity(query);
+            }
+          }}
         />
         <div className="search-icon" onClick={() => searchCity(query)}>
           <FiSearch />
