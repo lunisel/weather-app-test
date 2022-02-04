@@ -28,7 +28,7 @@ function App() {
 
       const weather = await fetchWeather(lat, lon);
       const time = formatTime(weather.current.dt);
-      console.log(time);
+      console.log(weather);
     };
 
     fetch();

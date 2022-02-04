@@ -8,7 +8,8 @@ export const fetchCity = async (city) => {
       if (city) {
         const lat = city[0].lat;
         const lon = city[0].lon;
-        return [lat, lon];
+        const name = city[0].name;
+        return [lat, lon, name];
       }
     } else {
       console.log("Something went wrong with the fetch", response);

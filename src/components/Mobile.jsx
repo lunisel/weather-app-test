@@ -9,7 +9,7 @@ const Mobile = () => {
   return (
     <div className="big-container">
       <Navbar page={page} setPage={setPage} />
-      {page === "home" && <HomeMobile />}
+      {page === "home" && <HomeMobile page={page} setPage={setPage} />}
       {page === "search" && <SearchMobile />}
       {page === "localization" && <LocalizationMobile />}
     </div>

@@ -1,7 +1,9 @@
-const HomeMobile = () => {
+import AddCity from "./AddCity";
+
+const HomeMobile = ({ page, setPage }) => {
   return (
     <div className="container">
-      <h1>HOME</h1>
+      <AddCity page={page} setPage={setPage} />
     </div>
   );
 };
