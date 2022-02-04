@@ -66,3 +66,29 @@ nav {
   position: absolute;
   bottom: 0;
 }
+
+@media screen and (min-width: 500px) {
+  .nav-icon {
+    width: 5rem;
+  }
+  .nav-icon svg {
+    font-size: 2.2rem;
+  }
+
+  .icons-container {
+    padding-inline: 4rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .nav-icon {
+    width: 7rem;
+  }
+  .nav-icon svg {
+    font-size: 2.5rem;
+  }
+
+  .icons-container {
+    padding-inline: 6rem;
+  }
+}
