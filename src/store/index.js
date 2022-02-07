@@ -11,6 +11,7 @@ export const initialState = {
   user: {
     firstName: "",
     cities: [],
+    selectedCity: null,
   },
 };
 

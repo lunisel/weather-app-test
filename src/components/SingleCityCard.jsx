@@ -1,14 +1,23 @@
+import { useDispatch } from "react-redux";
+import { addSelectedCity } from "../store/actions";
 import { formatDate, formatTime } from "./logic";
 
-const SingleCityCard = ({ currentWeather, name }) => {
+const SingleCityCard = ({ weather, name, setPage }) => {
+  const currentWeather = weather.current;
   const date = formatDate(currentWeather.dt);
   const time = formatTime(currentWeather.dt);
   const temp = currentWeather.temp;
   const temperature = temp.toString().split(".");
+
+  const dispatch = useDispatch();
+
   return (
     <div
       className={`card-container bg-${currentWeather.weather[0].icon}`}
-      onClick={() => console.log("Card clicked")}
+      onClick={() => {
+        dispatch(addSelectedCity(weather));
+        setPage("detail");
+      }}
     >
       <div className="card-text-container">
         <h2>{name}</h2>

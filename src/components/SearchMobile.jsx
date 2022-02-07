@@ -6,7 +6,7 @@ import Loading from "./Loading";
 import { fetchCity, fetchWeather } from "./logic";
 import SingleCityCard from "./SingleCityCard";
 
-const SearchMobile = () => {
+const SearchMobile = ({ setPage }) => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [cityWeather, setCityWeather] = useState(null);
@@ -59,8 +59,9 @@ const SearchMobile = () => {
         ) : (
           cityWeather && (
             <SingleCityCard
-              currentWeather={cityWeather.current}
+              weather={cityWeather}
               name={cityName}
+              setPage={setPage}
             />
           )
         )}

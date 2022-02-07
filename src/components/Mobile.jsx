@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Detail from "./DetailMobile";
 import HomeMobile from "./HomeMobile";
 import LocalizationMobile from "./LocalizationMobile";
 import Navbar from "./Navbar";
@@ -10,9 +11,9 @@ const Mobile = () => {
     <div className="big-container">
       <Navbar page={page} setPage={setPage} />
       {page === "home" && <HomeMobile page={page} setPage={setPage} />}
-      {page === "search" && <SearchMobile />}
+      {page === "search" && <SearchMobile setPage={setPage} />}
       {page === "localization" && <LocalizationMobile />}
-      {page === "details" && <LocalizationMobile />}
+      {page === "detail" && <Detail setPage={setPage} />}
     </div>
   );
 };

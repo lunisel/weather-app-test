@@ -18,6 +18,14 @@ const mainReducer = (state = initialState, action) => {
           cities: [...state.user.cities, action.payload],
         },
       };
+    case "ADD_SELECTED_CITY":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          selectedCity: action.payload,
+        },
+      };
     default:
       return state;
   }
