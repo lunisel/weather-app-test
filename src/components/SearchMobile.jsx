@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { useDispatch } from "react-redux";
-import { addCity } from "../store/actions";
 import Loading from "./Loading";
 import { fetchCity, fetchWeather } from "./logic";
 import SingleCityCard from "./SingleCityCard";
@@ -11,8 +9,6 @@ const SearchMobile = ({ setPage }) => {
   const [loading, setLoading] = useState(false);
   const [cityWeather, setCityWeather] = useState(null);
   const [cityName, setCityName] = useState(null);
-
-  const dispatch = useDispatch();
 
   const searchCity = async (q) => {
     setLoading(true);
@@ -46,14 +42,7 @@ const SearchMobile = ({ setPage }) => {
           <FiSearch />
         </div>
       </div>
-      <div
-        className="results-container"
-        onClick={() => {
-          if (cityWeather) {
-            dispatch(addCity({ w: cityWeather, name: cityName }));
-          } else return;
-        }}
-      >
+      <div className="results-container">
         {loading ? (
           <Loading />
         ) : (

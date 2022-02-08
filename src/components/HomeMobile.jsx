@@ -14,8 +14,14 @@ const HomeMobile = ({ page, setPage }) => {
       <AddCity page={page} setPage={setPage} />
       <div className="cities-container">
         {cities ? (
-          cities.map((c) => (
-            <SingleCityCard weather={c.w} name={c.name} setPage={setPage} />
+          cities.map((c, i) => (
+            <SingleCityCard
+              key={i}
+              weather={c.w}
+              name={c.name}
+              setPage={setPage}
+              index={i}
+            />
           ))
         ) : (
           <p>Empty</p>

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { addSelectedCity } from "../store/actions";
 import { formatDate, formatTime } from "./logic";
 
-const SingleCityCard = ({ weather, name, setPage }) => {
+const SingleCityCard = ({ weather, name, setPage, index }) => {
   const currentWeather = weather.current;
   const date = formatDate(currentWeather.dt);
   const time = formatTime(currentWeather.dt);
@@ -15,7 +15,7 @@ const SingleCityCard = ({ weather, name, setPage }) => {
     <div
       className={`card-container bg-${currentWeather.weather[0].icon}`}
       onClick={() => {
-        dispatch(addSelectedCity(weather));
+        dispatch(addSelectedCity({ w: weather, name: name, index: index }));
         setPage("detail");
       }}
     >
