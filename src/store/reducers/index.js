@@ -26,6 +26,14 @@ const mainReducer = (state = initialState, action) => {
           selectedCity: action.payload,
         },
       };
+    case "REMOVE_CITY":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          cities: state.user.cities.filter((c, i) => i !== action.payload),
+        },
+      };
     default:
       return state;
   }

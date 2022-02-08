@@ -12,3 +12,8 @@ export const addSelectedCity = (city) => ({
   type: "ADD_SELECTED_CITY",
   payload: city,
 });
+
+export const removeCity = (index) => ({
+  type: "REMOVE_CITY",
+  payload: index,
+});
