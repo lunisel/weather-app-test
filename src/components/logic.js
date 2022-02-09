@@ -27,7 +27,9 @@ export const fetchWeather = async (lat, lon) => {
     if (response.ok) {
       const weather = await response.json();
       return weather;
-    } else console.log("something went wrong with the fetch", response);
+    } else {
+      console.log("something went wrong with the fetch", response);
+    }
   } catch (err) {
     console.log(err);
   }
