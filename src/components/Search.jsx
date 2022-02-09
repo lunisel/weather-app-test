@@ -4,7 +4,7 @@ import Loading from "./Loading";
 import { fetchCity, fetchWeather } from "./logic";
 import SingleCityCard from "./SingleCityCard";
 
-const SearchMobile = ({ setPage }) => {
+const Search = ({ setPage }) => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [cityWeather, setCityWeather] = useState(null);
@@ -22,7 +22,7 @@ const SearchMobile = ({ setPage }) => {
   };
 
   return (
-    <div className="container" id="search">
+    <>
       <div className="search-title-container">
         <h1>Search</h1>
       </div>
@@ -55,8 +55,8 @@ const SearchMobile = ({ setPage }) => {
           )
         )}
       </div>
-    </div>
+    </>
   );
 };
 
-export default SearchMobile;
+export default Search;

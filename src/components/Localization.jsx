@@ -1,8 +1,8 @@
 import { FiMapPin } from "react-icons/fi";
 
-const LocalizationMobile = () => {
+const Localization = () => {
   return (
-    <div className="container">
+    <>
       <div className="title-localization-container">
         <h1>Localization</h1>
       </div>
@@ -10,8 +10,8 @@ const LocalizationMobile = () => {
         <FiMapPin />
         <span>Add localization</span>
       </div>
-    </div>
+    </>
   );
 };
 
-export default LocalizationMobile;
+export default Localization;

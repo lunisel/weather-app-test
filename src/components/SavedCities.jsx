@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addCity, removeCity } from "../store/actions";
+import { addCity, addUserName, removeCity } from "../store/actions";
 import AddCity from "./AddCity";
 import { fetchWeather } from "./logic";
 import SingleCityCard from "./SingleCityCard";
 
-const SavedCities = ({ page, setPage }) => {
+const SavedCities = ({ page, setPage, vw }) => {
   const cities = useSelector((state) => state.user.cities);
+  const name = useSelector((state) => state.user.firstName);
 
   const dispatch = useDispatch();
 
@@ -23,9 +24,30 @@ const SavedCities = ({ page, setPage }) => {
 
   return (
     <>
+      {vw === "Mobile" ? (
+        <div className="title-container">
+          <h2>Good Morning!</h2>
+          {name === "" ? (
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="name"
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  dispatch(addUserName(e.currentTarget.value));
+                }
+              }}
+            />
+          ) : (
+            <h2>{name}</h2>
+          )}
+        </div>
+      ) : (
+        ""
+      )}
       <AddCity page={page} setPage={setPage} />
       <div className="cities-container">
-        {cities ? (
+        {cities &&
           cities.map((c, i) => (
             <SingleCityCard
               key={i}
@@ -34,10 +56,7 @@ const SavedCities = ({ page, setPage }) => {
               setPage={setPage}
               index={i}
             />
-          ))
-        ) : (
-          <p>Empty</p>
-        )}
+          ))}
       </div>
     </>
   );

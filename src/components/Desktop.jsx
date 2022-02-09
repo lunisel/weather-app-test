@@ -1,6 +1,6 @@
-import LocalizationMobile from "./LocalizationMobile.jsx";
+import Localization from "./Localization.jsx";
 import SavedCities from "./SavedCities.jsx";
-import SearchMobile from "./SearchMobile.jsx";
+import Search from "./Search.jsx";
 
 const Desktop = ({ vw }) => {
   return (
@@ -11,8 +11,8 @@ const Desktop = ({ vw }) => {
       </div>
       <div className="forcast-selected-city"></div>
       <div className="search-localization">
-        <SearchMobile />
-        <LocalizationMobile />
+        <Search />
+        <Localization />
       </div>
     </div>
   );
