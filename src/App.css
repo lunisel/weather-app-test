@@ -68,7 +68,7 @@ html {
 
 .card-container {
   width: 100%;
-  height: 10rem;
+  height: 9rem;
   border-radius: 25px;
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
@@ -202,8 +202,8 @@ nav {
 
 /********************* HOME ********************/
 .container.home {
-  height: 100vh;
-  padding-bottom: 30%;
+  max-height: 85vh;
+  padding-bottom: 5%;
   overflow: scroll;
 }
 
@@ -276,23 +276,26 @@ input.name:focus-visible {
 .search-title-container h1 {
   color: #01175f;
   font-weight: 600;
-  text-align: center;
+  font-size: 1.8rem;
+  margin-left: 1rem;
 }
 
 .search-bar-container {
   display: flex;
   position: relative;
   background-color: white;
-  height: 5rem;
+  height: 8rem;
   justify-content: space-between;
   align-items: center;
   border-radius: 25px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
 }
 
 .search-bar-container input {
   border: transparent;
-  padding-left: 1rem;
-  font-size: 1.2rem;
+  margin-left: 2rem;
+  font-size: 1.7rem;
+  width: 80%;
   color: #757575;
   font-weight: 600;
 }
@@ -315,7 +318,7 @@ input.name:focus-visible {
 }
 
 .search-icon {
-  width: 3rem;
+  width: 3.5rem;
   border-radius: 25px;
   height: 100%;
   display: flex;
@@ -325,7 +328,7 @@ input.name:focus-visible {
 }
 
 .search-icon svg {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #ffffff;
 }
 
@@ -513,10 +516,57 @@ input.name:focus-visible {
   margin: auto;
 }
 
+/************************* LOCALIZATION ***********************/
+
+.title-localization-container {
+  margin-bottom: 1rem;
+}
+
+.title-localization-container h1 {
+  color: #01175f;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+.localization-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(150deg, #5374e7, #77b9f5);
+  height: 9rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
+}
+
+.localization-container svg {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.localization-container span {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 /* ------------------------------------- DESKTOP ---------------------------------------- */
 
 .big-container#desktop {
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 65vh auto;
+  padding: 0 1.5rem;
+}
+
+.current-other-cities {
+  margin-top: 25%;
+  padding-inline: 2rem;
+  overflow-y: scroll;
+}
+
+.search-localization {
+  padding-top: 3rem;
+  margin-bottom: 2rem;
 }

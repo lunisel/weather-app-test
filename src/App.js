@@ -20,7 +20,11 @@ function App() {
     };
   }, [vw]);
 
-  return <div className="App">{vw > 1000 ? <Desktop /> : <Mobile />}</div>;
+  return (
+    <div className="App">
+      {vw > 1000 ? <Desktop vw="Desktop" /> : <Mobile vw="Mobile" />}
+    </div>
+  );
 }
 
 export default App;
