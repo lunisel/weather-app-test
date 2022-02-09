@@ -5,7 +5,7 @@ import { formatDate, formatTime } from "./logic";
 const SingleCityCard = ({ weather, name, setPage, index }) => {
   const currentWeather = weather.current;
   const date = formatDate(currentWeather.dt);
-  const time = formatTime(currentWeather.dt);
+  const time = formatTime(currentWeather.dt, weather.timezone);
   const temp = currentWeather.temp;
   const temperature = temp.toString().split(".");
 

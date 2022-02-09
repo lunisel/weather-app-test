@@ -56,8 +56,12 @@ const Detail = ({ setPage }) => {
             i < 5 && (
               <div className="other-times">
                 <p>
-                  {parseInt(formatTime(h.dt).split(":")[0])}
-                  {formatTime(h.dt).split(" ")[1].toLowerCase()}
+                  {parseInt(
+                    formatTime(h.dt, selectedCity.w.timezone).split(":")[0]
+                  )}
+                  {formatTime(h.dt, selectedCity.w.timezone)
+                    .split(" ")[1]
+                    .toLowerCase()}
                 </p>
                 <div className="circle"></div>
                 <span>

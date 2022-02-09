@@ -49,16 +49,22 @@ export const formatDate = (dt) => {
   return time;
 };
 
-export const formatTime = (dt) => {
+export const formatTime = (dt, timezone) => {
   const unixTimestamp = dt;
 
   const milliseconds = unixTimestamp * 1000;
 
   const dateObject = new Date(milliseconds);
 
-  const h = dateObject.toLocaleString("en-US", { hour: "numeric" });
+  const h = dateObject.toLocaleString("en-US", {
+    hour: "numeric",
+    timeZone: timezone,
+  });
   const [hour, AmPm] = h.split(" ");
-  const minutes = dateObject.toLocaleString("en-US", { minute: "numeric" });
+  const minutes = dateObject.toLocaleString("en-US", {
+    minute: "numeric",
+    timeZone: timezone,
+  });
 
   const time =
     (hour.length === 2 ? hour : "0" + hour) +
