@@ -44,7 +44,7 @@ export const formatDate = (dt) => {
   const month = dateObject.toLocaleString("en-US", { month: "long" });
   const day = dateObject.toLocaleString("en-US", { day: "numeric" });
 
-  const time = weekDay + " " + day + " , " + month;
+  const time = weekDay + " " + day + ", " + month;
 
   return time;
 };
