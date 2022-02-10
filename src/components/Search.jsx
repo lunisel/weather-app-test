@@ -31,7 +31,10 @@ const Search = ({ setPage }) => {
           type="text"
           defaultValue={query}
           placeholder="ex: Miami"
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            if (e.target.value === "") setCityWeather(null);
+          }}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
               searchCity(query);
