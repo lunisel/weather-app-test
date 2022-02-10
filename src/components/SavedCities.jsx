@@ -9,6 +9,7 @@ import SingleCityCard from "./SingleCityCard";
 const SavedCities = ({ page, setPage, vw }) => {
   const cities = useSelector((state) => state.user.cities);
   const name = useSelector((state) => state.user.firstName);
+  const selectedCity = useSelector((state) => state.user.selectedCity);
 
   const dispatch = useDispatch();
 
@@ -47,16 +48,30 @@ const SavedCities = ({ page, setPage, vw }) => {
       )}
       <AddCity page={page} setPage={setPage} />
       <div className="cities-container">
-        {cities &&
-          cities.map((c, i) => (
-            <SingleCityCard
-              key={i}
-              weather={c.w}
-              name={c.name}
-              setPage={setPage}
-              index={i}
-            />
-          ))}
+        {vw === "Desktop"
+          ? cities &&
+            cities.map(
+              (c, i) =>
+                selectedCity.name !== c.name && (
+                  <SingleCityCard
+                    key={i}
+                    weather={c.w}
+                    name={c.name}
+                    setPage={setPage}
+                    index={i}
+                  />
+                )
+            )
+          : cities &&
+            cities.map((c, i) => (
+              <SingleCityCard
+                key={i}
+                weather={c.w}
+                name={c.name}
+                setPage={setPage}
+                index={i}
+              />
+            ))}
       </div>
     </>
   );

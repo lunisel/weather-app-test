@@ -25,7 +25,10 @@ const SingleCityCard = ({ weather, name, setPage, index }) => {
         <p className="time">{time}</p>
       </div>
       <div className="card-icon-container">
-        <img src={`/assets/${currentWeather.weather[0].icon}.png`} alt="" />
+        <img
+          src={`/assets/${currentWeather.weather[0].icon}.png`}
+          alt="weather-icon"
+        />
       </div>
       <div className="card-temperature-container">
         <p>{temperature[0]}˚</p>
