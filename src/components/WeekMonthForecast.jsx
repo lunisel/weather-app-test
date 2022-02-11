@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { formatDate } from "./logic";
 
 const WeekMonthForecast = () => {
   const [week, setWeek] = useState(true);
@@ -31,7 +32,25 @@ const WeekMonthForecast = () => {
       </div>
 
       {week ? (
-        <div className="forecast-container"></div>
+        <div className="forecast-container">
+          <div className="next-days-container desktop">
+            {selectedCity.w.daily.map(
+              (d, i) =>
+                i !== 0 && (
+                  <div className="signle-day">
+                    <h2>{formatDate(d.dt).split(" ")[0]}</h2>
+                    <span>{d.temp.day.toString().split(".")[0]}˚</span>
+                    <div className="icon-container">
+                      <img
+                        src={`/assets/${d.weather[0].icon}.png`}
+                        alt="icon"
+                      />
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
+        </div>
       ) : (
         <div className="forecast-container"></div>
       )}

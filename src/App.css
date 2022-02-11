@@ -821,6 +821,12 @@ input.name:focus-visible {
   border-radius: 0 25px 25px 25px;
 }
 
+.next-days-container.desktop {
+  height: 100%;
+  margin: 0;
+  padding: 2rem;
+}
+
 @media screen and (min-width: 1200px) {
   .img-current-container {
     padding: 0 2rem 0 1.5rem;
