@@ -700,6 +700,7 @@ input.name:focus-visible {
   width: 60%;
   margin: auto;
   justify-content: space-between;
+  position: relative;
 }
 
 .timeline-container-desktop p,
@@ -719,6 +720,21 @@ input.name:focus-visible {
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
   gap: 0;
+}
+
+.timeline-container-desktop .now span {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.timeline-container-desktop .other-times span {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.timeline-container-desktop .other-times p {
+  font-size: 1.3rem;
+  font-weight: 300;
 }
 
 .timeline-container-desktop .circle {
@@ -746,6 +762,15 @@ input.name:focus-visible {
 
 .line-desktop {
   position: absolute;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  top: 1rem;
+  left: 48%;
 }
 
 /* WEEK-MONTH */
