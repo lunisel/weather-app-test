@@ -825,6 +825,11 @@ input.name:focus-visible {
   height: 100%;
   margin: 0;
   padding: 2rem;
+  gap: 2rem;
+}
+
+.next-days-container.desktop .signle-day {
+  min-width: 9rem;
 }
 
 .next-month-info-container {
