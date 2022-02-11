@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import CurrentSelectedDesktop from "./CurrentSelectedDesktop.jsx";
 import Localization from "./Localization.jsx";
 import SavedCities from "./SavedCities.jsx";

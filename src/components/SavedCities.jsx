@@ -14,13 +14,14 @@ const SavedCities = ({ page, setPage, vw }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    cities.map(async (c, i) => {
-      let lat = c.w.lat;
-      let lon = c.w.lon;
-      let w = await fetchWeather(lat, lon);
-      dispatch(addCity({ w: w, name: c.name }));
-      dispatch(removeCity(i - i));
-    });
+    cities &&
+      cities.map(async (c, i) => {
+        let lat = c.w.lat;
+        let lon = c.w.lon;
+        let w = await fetchWeather(lat, lon);
+        dispatch(addCity({ w: w, name: c.name }));
+        dispatch(removeCity(i - i));
+      });
   }, []);
 
   return (
@@ -46,7 +47,7 @@ const SavedCities = ({ page, setPage, vw }) => {
       ) : (
         ""
       )}
-      <AddCity page={page} setPage={setPage} />
+      <AddCity page={page} setPage={setPage} vw={vw} />
       <div className="cities-container">
         {vw === "Desktop"
           ? cities &&

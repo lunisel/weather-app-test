@@ -706,22 +706,22 @@ input.name:focus-visible {
   border-radius: 25px 25px 0 0;
 }
 
-.title-container.active {
+.week-month-title-container.active {
   background-color: #5374e7;
   border-radius: 25px 25px 0 0;
 }
 
-.title-container.active h3 {
+.week-month-title-container.active h3 {
   color: #ffffff;
 }
 
-.title-container h3 {
+.week-month-title-container h3 {
   color: #01175f;
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.title-container {
+.week-month-title-container {
   width: 50%;
   display: flex;
   justify-content: center;
