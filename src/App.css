@@ -73,6 +73,7 @@ html {
   display: grid;
   grid-template-columns: 33.3% 33.3% 33.3%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
+  cursor: pointer;
 }
 
 .card-text-container {
@@ -241,6 +242,7 @@ nav {
 .add-city-container svg {
   color: #01175f;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .cities-container {
@@ -829,7 +831,7 @@ input.name:focus-visible {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   align-items: center;
 }
 
@@ -842,8 +844,8 @@ input.name:focus-visible {
 }
 
 .dot.active {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.7rem;
+  height: 0.7rem;
   background-color: #ffffff;
 }
 
