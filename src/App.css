@@ -267,6 +267,20 @@ input.name:focus-visible {
   outline-color: transparent;
 }
 
+@media screen and (min-width: 700px) {
+  .title-container h2 {
+    font-size: 2rem !important;
+  }
+
+  .add-city-container svg {
+    font-size: 1.6rem !important;
+  }
+
+  .add-city-container p {
+    font-size: 1.3rem !important;
+  }
+}
+
 /******************* SEARCH ********************/
 
 .container#search-mobile {
