@@ -249,7 +249,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 50px;
+  margin-top: 45px;
   padding-bottom: 2rem;
 }
 
@@ -771,6 +771,7 @@ input.name:focus-visible {
   height: 85%;
   border-radius: 25px;
   padding: 2rem 0 1rem 0;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
 }
 
 .line-desktop {
@@ -833,6 +834,7 @@ input.name:focus-visible {
   background: linear-gradient(180deg, #5374e7, #77b9f5);
   border-radius: 0 25px 25px 25px;
   position: relative;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.17);
 }
 
 .dots-container {
