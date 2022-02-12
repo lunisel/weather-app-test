@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { formatDate } from "./logic";
 
 const WeekMonthForecast = () => {
   const [week, setWeek] = useState(true);
   const selectedCity = useSelector((state) => state.user.selectedCity);
+  const [weekScroll, setWeekScroll] = useState(0);
+  const scrollContainer = useRef();
 
   return (
     <div className="week-month-container">
@@ -33,7 +35,13 @@ const WeekMonthForecast = () => {
 
       {week ? (
         <div className="forecast-container">
-          <div className="next-days-container desktop">
+          <div
+            className="next-days-container desktop"
+            ref={scrollContainer}
+            onScroll={(e) =>
+              setWeekScroll((e.currentTarget.scrollLeft * 100) / 863)
+            }
+          >
             {selectedCity.w.daily.map(
               (d, i) =>
                 i !== 0 && (
@@ -49,6 +57,28 @@ const WeekMonthForecast = () => {
                   </div>
                 )
             )}
+          </div>
+          <div className="dots-container week">
+            <div
+              className={weekScroll <= 33 ? "dot active" : "dot"}
+              onClick={() => (scrollContainer.current.scrollLeft = 0)}
+            ></div>
+            <div
+              className={
+                weekScroll > 33 && weekScroll <= 66 ? "dot active" : "dot"
+              }
+              onClick={() =>
+                (scrollContainer.current.scrollLeft = (41 * 863) / 100)
+              }
+            ></div>
+            <div
+              className={
+                weekScroll > 66 && weekScroll <= 100 ? "dot active" : "dot"
+              }
+              onClick={() =>
+                (scrollContainer.current.scrollLeft = (82 * 863) / 100)
+              }
+            ></div>
           </div>
         </div>
       ) : (
@@ -92,6 +122,11 @@ const WeekMonthForecast = () => {
                 </span>
               </div>
             </div>
+          </div>
+          <div className="dots-container month">
+            <div className="dot active"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
           </div>
         </div>
       )}

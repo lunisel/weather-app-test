@@ -819,12 +819,39 @@ input.name:focus-visible {
   width: 100%;
   background: linear-gradient(180deg, #5374e7, #77b9f5);
   border-radius: 0 25px 25px 25px;
+  position: relative;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.37);
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #ffffff;
 }
 
 .next-days-container.desktop {
   height: 100%;
   margin: 0;
   padding: 2rem;
+  padding-bottom: 3.5rem;
   gap: 2rem;
 }
 
@@ -844,6 +871,11 @@ input.name:focus-visible {
 
 .forecast-container.month {
   padding: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+.dots-container.month .dot {
+  cursor: not-allowed;
 }
 
 .date-icon-container {
